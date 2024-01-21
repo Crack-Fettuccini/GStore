@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        html{
+            font-family: -apple-system, system-ui, BlinkMacSystemFont, Avenir, Helvetica, Arial, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        *{
+            margin:0;
+            border:0;
+        }
+        @page {
+            size: A4; /* Change from the default size of A4 */
+            margin: 2mm; /* Set margin on each page */
+        }
+        .table {
+            width: 100%;
+            max-width: 100%;
+            margin-bottom: 1rem;
+            background-color: transparent;
+        }
+table,th,td{
+    border-collapse: collapse;
+}
+.table th,
+.table td {
+    padding: 0.75rem;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+}
+
+.table thead th {
+    vertical-align: bottom;
+    border-bottom: 2px solid #dee2e6;
+}
+
+.table tbody + tbody {
+    border-top: 2px solid #dee2e6;
+}
+
+.table .table {
+    background-color: #fff;
+}
+
+/* Table Striped Rows */
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+    </style>
+    <title>Monthly Report on expenditure</title>
+</head>
+<body>
+    <h1>Monthly Report on expenditure</h1>
+    <h3> Total Expenditure: &#8377;{{expenditure}}</h3>
+    <img src="{{ spent_bubble|safe }}" alt="category wise expenditure chart">
+    <img src="{{ category_pie|safe }}" alt="Category Pie chart">
+    <img src="{{ overtime|safe }}" alt="Spending over time chart">
+    <h2>Raw Data for additional details</h2>
+    {{ raw_data|safe }}
+</body>
+</html>

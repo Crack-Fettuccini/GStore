@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GStore</title>
+    <style>
+    </style>
+</head>
+<body style="font-family: -apple-system, system-ui, BlinkMacSystemFont, Avenir, Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;">
+  <div>
+    <p style="text-align: center; font-size: xxx-large; font-weight: 400;">GStore</p>
+  </div>
+  <div>
+    <p>
+      Hey {{ user.Username }},
+    </p>
+    <p>
+      {% if most_recent_sale %}
+        {% if (datetime.now() - most_recent_sale.SaleDate) > timedelta(days=1, hours=12) %}
+          Thank you for all your purchases at GStore! If you have any feedback for us to further enhance your experience in our store, please do not hesitate to contact us at this email address.
+        {% else %}
+          We noticed that you haven't made any purchases at our store today. We would love to know if there's anything we can do to improve to serve you. If you'd like to share your feedback, please contact us at this email address. Or if you want to proceed to our store,
+        {% endif %}
+      {% else %}
+        Thank you for showing interest in GStore. Click here to enter our store.
+      {% endif %}
+    </p>
+    <p style="text-align: center;">
+      <a style="background-color: #28a745; color: #fff; border: none; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; margin: 4px 2px; cursor: pointer; border-radius: 4px;"
+        href="https://localhost:8080/" role="button"> Click here to enter GStore!</a>
+    </p>
+    <p>
+      With love,<br>
+      The GStore Team
+    </p>
+  </div>
+  <div style="text-align: right; font-size: small; font-weight: 300;">
+    &#169; 2023 GStore. All rights reserved.
+  </div>
+</body>
+</html>

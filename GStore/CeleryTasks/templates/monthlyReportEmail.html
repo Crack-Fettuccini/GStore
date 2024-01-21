@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        html{
+    font-family: -apple-system, system-ui, BlinkMacSystemFont, Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+        }
+        .table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 1rem;
+    background-color: transparent;
+}
+
+table,th,td{
+    border-collapse: collapse;
+}
+.table th,
+.table td {
+    padding: 0.75rem;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+}
+
+.table thead th {
+    vertical-align: bottom;
+    border-bottom: 2px solid #dee2e6;
+}
+
+.table tbody + tbody {
+    border-top: 2px solid #dee2e6;
+}
+
+.table .table {
+    background-color: #fff;
+}
+
+/* Table Striped Rows */
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+    </style>
+    <title>Monthly Report on expenditure</title>
+</head>
+<body>
+    <h1>Monthly Report on expenditure</h1>
+    <h3> Total Expenditure: &#8377;{{expenditure}}</h3>
+
+    <img src="cid:overtime_cid" alt="Overtime Chart">
+
+    <img src="cid:category_pie_cid" alt="Category Pie Chart">
+
+    <img src="cid:spent_bubble_cid" alt="Spent Bubble Chart">
+    
+
+    <h2>Raw Data for this graphs for aditional details</h2>
+    {{ raw_data|safe }}
+    <small>
+        The HTML file provides a more interactive interface to check data. Download it and view to for a better experience.
+    </small>
+</body>
+</html>

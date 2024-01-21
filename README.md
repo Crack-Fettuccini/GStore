@@ -1,24 +1,22 @@
-# gstorefront
+Set your credentials in the file credentials.txt
+# Run the code in terminal:
+```sh
+source run.sh
+```
+and your app should be up and working.
 
-## Project setup
+\*if you are on MacOS\Linux and run into an issue with importing Kaleido, 
+with the cloned parent folder as current directory:
+```sh
+cd ./GStorevenv/lib/python3.11/site-packages/kaleido/executable
+vi kaleido
 ```
-npm install
-```
+and replace the file contents with
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+> DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+> cd "$DIR"
+> ./bin/kaleido "$@"
 
-### Compiles and minifies for production
-```
-npm run build
-```
+(Quotes around _$DIR_ and _$@_ to work with folders with spaces in their names)
 
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+\*if you get ssl error approve the ssl certificates locally
