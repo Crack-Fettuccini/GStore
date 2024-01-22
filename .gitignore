@@ -1,2 +1,26 @@
 credentials.txt
+gstorevenv/
+*.DS_Store
+gstorefront/node_modules
+gstorefront/dist
+celerybeat-schedule.db
+dump.rdb
 
+# local env files
+gstorefront.env.local
+gstorefront.env.*.local
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Editor directories and files
+*.idea
+*.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
