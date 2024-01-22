@@ -5,25 +5,7 @@ from gunicorn_config import gunicorn_options
 from gunicorn.app.base import BaseApplication
 #import cryptography #Necessary for adhoc method of creating SSL certificates
 
-def number_of_workers():
-  return (multiprocessing.cpu_count() * 2) + 1
-
-
-def handler_app(environ, start_response):
-  response_body = b'Works fine'
-  status = '200 OK'
-
-  response_headers = [
-      ('Content-Type', 'text/plain'),
-  ]
-
-  start_response(status, response_headers)
-
-  return [response_body]
-
-
 class StandaloneApplication(BaseApplication):
-
     def __init__(self, app, options=None):
         self.options = options or {}
         self.application = app
