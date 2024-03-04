@@ -20,4 +20,5 @@ and replace the file contents with
 (Quotes around _$DIR_ and _$@_ to work with folders with spaces in their names)
 
 \*if you get ssl error approve the ssl certificates locally
+
 preferably use python 3.11
